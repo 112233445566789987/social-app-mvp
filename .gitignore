@@ -1,0 +1,51 @@
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.fvm/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Android
+*.apk
+*.aab
+*.dex
+*.class
+android/.gradle/
+android/app/build/
+android/build/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/engine.flax
+ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+
+# Misc
+*.log
+*.lock
+pubspec.lock
+
+# Environment secrets (do NOT commit!)
+.env
+*.env
+.env.*
