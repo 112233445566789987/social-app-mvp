@@ -1,0 +1,72 @@
+# ============================================================
+# Social App MVP — Codemagic CI/CD 配置
+# ============================================================
+
+workflows:
+  # ── Android Debug APK（主要构建目标）───────────────────
+  android-debug:
+    name: 📱 Android Debug APK
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      android:
+        license: android-license
+    cache:
+      cache_paths:
+        - $HOME/.gradle/caches
+    scripts:
+      - name: 安装依赖
+        script: |
+          flutter pub get
+      - name: 代码分析
+        script: |
+          flutter analyze --no-fatal-infos || true
+      - name: 构建 Debug APK
+        script: |
+          flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - codemagic-reports@example.com
+        notify:
+          on_build_success: true
+          on_build_failure: true
+
+  # ── Android Release AAB（上传 Play Store）──────────────
+  android-release:
+    name: 📦 Android Release AAB
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      android:
+        license: android-license
+    scripts:
+      - flutter pub get
+      - flutter build appbundle --release
+    artifacts:
+      - build/app/outputs/bundle/release/*.aab
+
+  # ── iOS Simulator（需要 Mac + Xcode）────────────────────
+  ios-simulator:
+    name: 🍎 iOS Simulator Build
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - flutter pub get
+      - flutter build ios --simulator --no-codesign
+    artifacts:
+      - build/ios/iphonesimulator/*.app
+
+# ============================================================
+# 使用步骤（详见 README.md）
+#
+# 1. 推送到 GitHub
+# 2. 访问 codemagic.io → Add app → GitHub → social-app-mvp
+# 3. Start build → android-debug → 等待 5-10 分钟
+# 4. Artifacts → 下载 .apk → 安装到手机测试
+# ============================================================
