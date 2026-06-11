@@ -1,0 +1,28 @@
+# This file tracks properties of this Flutter project.
+# Used by Flutter tool to assess capabilities and perform upgrades etc.
+#
+# This file should be version controlled and should not be manually edited.
+
+version:
+  revision: 7a4e3340aafa49402fbfb80b3f5ab5cf83e1c49a
+  channel: stable
+
+project_type: app
+
+# Tracks metadata for the flutter migrate command
+migration_projects:
+  # This is the sha256 of the latest commit on the stable branch
+  # of the Flutter repository. This is used for migration checks.
+  base_sha: 7a4e3340aafa49402fbfb80b3f5ab5cf83e1c49a
+
+  # Tracks the current Flutter version being used
+  current_version:
+    sha: 7a4e3340aafa49402fbfb80b3f5ab5cf83e1c49a
+    archive: 3.24.0
+
+  # This is the sha256 of the last Flutter commit on the base_sha above,
+  # at the time when the current_version.sha above was set.
+  last_version_base_sha: 7a4e3340aafa49402fbfb80b3f5ab5cf83e1c49a
+
+  # Any manual override of the Dart SDK version (must be a valid semver)
+  # sdk: ">=3.0.0 <4.0.0"
