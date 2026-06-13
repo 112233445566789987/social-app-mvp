@@ -1,4 +1,3 @@
-import '../../auth/data/auth_repository.dart';
 
 class MatchingUser {
   final String id;

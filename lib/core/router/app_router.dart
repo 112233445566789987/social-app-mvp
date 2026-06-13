@@ -10,6 +10,9 @@ import '../../features/chat/presentation/screens/chat_list_screen.dart';
 import '../../features/moments/presentation/screens/moments_screen.dart';
 import '../../features/matching/presentation/screens/matching_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/friends/presentation/screens/friends_list_screen.dart';
+import '../../features/friends/presentation/screens/friend_requests_screen.dart';
+import '../../features/friends/presentation/screens/search_users_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -63,6 +66,18 @@ class AppRouter {
             ),
           ),
           GoRoute(
+            path: '/friends',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: FriendsListScreen(),
+            ),
+          ),
+          GoRoute(
+            path: '/match',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: MatchingScreen(),
+            ),
+          ),
+          GoRoute(
             path: '/chats',
             pageBuilder: (context, state) => const NoTransitionPage(
               child: ChatListScreen(),
@@ -75,6 +90,16 @@ class AppRouter {
             ),
           ),
         ],
+      ),
+
+      // 好友申请 & 搜索（独立页面，不带底部导航）
+      GoRoute(
+        path: '/friend-requests',
+        builder: (context, state) => const FriendRequestsScreen(),
+      ),
+      GoRoute(
+        path: '/search-users',
+        builder: (context, state) => const SearchUsersScreen(),
       ),
 
       // 聊天详情（独立页面，不带底部导航）
