@@ -152,22 +152,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 16),
 
               Center(
-                child: Text.rich(
-                  TextSpan(
-                    text: '注册即表示同意',
-                    style: const TextStyle(color: AppTheme.textSecondary),
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('用户协议'),
-                      ),
-                      const Text('和', style: TextStyle(color: AppTheme.textSecondary)),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('隐私政策'),
-                      ),
-                    ],
-                  ),
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    Text('注册即表示同意', style: const TextStyle(color: AppTheme.textSecondary)),
+                    TextButton(onPressed: () {}, child: const Text('用户协议')),
+                    Text('和', style: const TextStyle(color: AppTheme.textSecondary)),
+                    TextButton(onPressed: () {}, child: const Text('隐私政策')),
+                  ],
                 ),
               ),
             ],
