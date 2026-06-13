@@ -88,7 +88,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
               backgroundImage: widget.avatarUrl != null
                   ? NetworkImage(widget.avatarUrl!)
                   : null,
-              backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.1),
+              backgroundColor: AppTheme.primaryColor.withOpacity(0.1),
               child: widget.avatarUrl == null
                   ? Text(widget.otherUserName[0])
                   : null,
@@ -146,7 +146,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
       ),
       decoration: BoxDecoration(
         color: Colors.white,
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, -2))],
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, -2))],
       ),
       child: Row(
         children: [
@@ -212,7 +212,7 @@ class _MessageBubble extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.06),
+              color: Colors.black.withOpacity(0.06),
               blurRadius: 6,
               offset: const Offset(0, 2),
             ),

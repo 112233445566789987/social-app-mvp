@@ -123,7 +123,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
               _ActionButton(
                 icon: Icons.favorite,
                 color: AppTheme.accentColor,
-                bgColor: AppTheme.accentColor.withValues(alpha: 0.1),
+                bgColor: AppTheme.accentColor.withOpacity(0.1),
                 size: 56,
                 onTap: () => _onAction(true),
               ),
@@ -175,8 +175,8 @@ class _UserCard extends StatelessWidget {
             user.avatarUrl,
             fit: BoxFit.cover,
             errorBuilder: (_, __, ___) => Container(
-              color: AppTheme.primaryColor.withValues(alpha: 0.1),
-              child: Icon(Icons.person, size: 80, color: AppTheme.primaryColor.withValues(alpha: 0.3)),
+              color: AppTheme.primaryColor.withOpacity(0.1),
+              child: Icon(Icons.person, size: 80, color: AppTheme.primaryColor.withOpacity(0.3)),
             ),
           ),
           // 渐变遮罩
@@ -192,7 +192,7 @@ class _UserCard extends StatelessWidget {
                   end: Alignment.bottomCenter,
                   colors: [
                     Colors.transparent,
-                    Colors.black.withValues(alpha: 0.8),
+                    Colors.black.withOpacity(0.8),
                   ],
                 ),
               ),
@@ -260,7 +260,7 @@ class _UserCard extends StatelessWidget {
                     return Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: AppTheme.primaryColor.withValues(alpha: 0.3),
+                        color: AppTheme.primaryColor.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
@@ -306,7 +306,7 @@ class _ActionButton extends StatelessWidget {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: color.withValues(alpha: 0.3),
+              color: color.withOpacity(0.3),
               blurRadius: 12,
               offset: const Offset(0, 4),
             ),

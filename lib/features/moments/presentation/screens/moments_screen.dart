@@ -143,7 +143,7 @@ class _MomentCard extends StatelessWidget {
                   backgroundImage: moment.avatarUrl != null
                       ? NetworkImage(moment.avatarUrl!)
                       : null,
-                  backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.1),
+                  backgroundColor: AppTheme.primaryColor.withOpacity(0.1),
                   child: moment.avatarUrl == null
                       ? Text(moment.userName[0])
                       : null,

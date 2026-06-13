@@ -1,0 +1,11 @@
+fix: resolve all flutter analyze errors (47 issues)
+
+- Replace Color.withValues(alpha: X) with Color.withOpacity(X) across all screens
+  (Flutter 3.24 does not support withValues API)
+- Fix register_screen.dart: wrap TextButton in WidgetSpan for Text.rich
+- Fix home_screen.dart: correct relative import path (3 levels -> 4 levels up)
+- Fix moments_repository.dart: correct import path to moment_model
+- Remove unused imports in matching_repository.dart and profile_screen.dart
+- Add @immutable to _StatItem, make Padding and Row const in stats section
+- Create assets/images and assets/icons directories
+- GeneratedPluginRegistrant.java added by flutter pub get

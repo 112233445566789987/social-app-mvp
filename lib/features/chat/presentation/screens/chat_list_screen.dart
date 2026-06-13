@@ -81,7 +81,7 @@ class _ChatSessionTile extends StatelessWidget {
             backgroundImage: session.avatarUrl != null
                 ? NetworkImage(session.avatarUrl!)
                 : null,
-            backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.1),
+            backgroundColor: AppTheme.primaryColor.withOpacity(0.1),
             child: session.avatarUrl == null
                 ? Text(session.otherUserName[0])
                 : null,

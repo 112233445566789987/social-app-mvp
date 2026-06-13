@@ -35,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.05),
+                        color: Colors.black.withOpacity(0.05),
                         blurRadius: 10,
                       ),
                     ],
@@ -47,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                         backgroundImage: user?.avatarUrl != null
                             ? NetworkImage(user!.avatarUrl!)
                             : null,
-                        backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.1),
+                        backgroundColor: AppTheme.primaryColor.withOpacity(0.1),
                         child: user?.avatarUrl == null
                             ? Text(user?.name[0] ?? 'U', style: const TextStyle(fontSize: 28))
                             : null,
@@ -76,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                               decoration: BoxDecoration(
-                                color: AppTheme.primaryColor.withValues(alpha: 0.1),
+                                color: AppTheme.primaryColor.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Text(
@@ -168,7 +168,7 @@ class ProfileScreen extends StatelessWidget {
                     leading: Container(
                       width: 40, height: 40,
                       decoration: BoxDecoration(
-                        color: AppTheme.errorColor.withValues(alpha: 0.1),
+                        color: AppTheme.errorColor.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Icon(Icons.logout, color: AppTheme.errorColor, size: 20),
@@ -273,7 +273,7 @@ class _MenuItem extends StatelessWidget {
       leading: Container(
         width: 40, height: 40,
         decoration: BoxDecoration(
-          color: iconColor.withValues(alpha: 0.1),
+          color: iconColor.withOpacity(0.1),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(icon, color: iconColor, size: 20),
